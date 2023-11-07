@@ -1132,7 +1132,7 @@ false.
 // 3 - green, action go
 // 4 - Будь-який інший колір або значення відповідно світлофор не працює, action be careful
 
-// let userInput = prompt("color?").toLocaleLowerCase();
+// let userInput = prompt("color?")?.toLocaleLowerCase();
 // let action;
 
 // switch (userInput) {
@@ -1217,3 +1217,28 @@ false.
 
 // Task - 4
 // Порахуй скільки голосних літер у реченні.
+
+// function vowelCount(str){
+//   const vowelArr = ["a","e","y","u","i","o"];
+//   let counter = 0;
+  
+//   for(let i = 0; i<str.length; i++){
+//     if(vowelArr.includes(str[i].toLowerCase())){
+//       counter++
+//     }
+//   }
+  
+//   return counter;
+// }
+
+// function vowelCount(str) {
+//   const regex = /[aeiou]/gi;
+//   const matches = str.match(regex);
+//   return matches ? matches.length : 0;
+// }
+
+
+
+// console.log(vowelCount("Hello world!"));
+// console.log(vowelCount("Junior Web Developer"));
+// console.log(vowelCount("HELLO WORLD"));
