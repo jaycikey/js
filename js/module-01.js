@@ -1231,6 +1231,8 @@ false.
 //   return counter;
 // }
 
+/* Регулярні вирази */
+
 // function vowelCount(str) {
 //   const regex = /[aeiou]/gi;
 //   const matches = str.match(regex);
