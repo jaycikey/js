@@ -944,3 +944,129 @@ Stack frame (кадр стека, запис стека) - структура, �
 Стек викликів - не безмежний, йому відводиться кінцевий об'єм пам'яті. Іноді в консолі можна побачити помилку "Uncaught RangeError: Maximum call stack size exceeded" - переповнення стека (stack overflow).
 
 Це може статися у випадку неправильного використання рекурсії або зациклення викликів функцій, тобто, якщо відбуваються нескінченні виклики функцій і результат не повертається, - стек збільшується. Така помилка виникне після досягнення ліміту кількості записів стека, і скрипт «падає». */
+
+// Task-1;
+// Створи функцію яка буде перевіряти чи кожен елемент 
+// масиву більше ніж вказане значення.
+// Функція приймає два параметри.
+// 1 - Масив чисел
+// 2 - Число яке потрібно порівнювати з усіма елементами
+// масиву.
+// Функція повертає повідомлення про успішну або не успішну 
+// перевірку (повідомлення "Success ✅" "Fail ❌")
+
+// const numbers = [25, 12, 67, 40, 18];
+// function checkValue(arr, checkNumber){
+//     let message = "Succes";
+//     for(const number of arr){
+//         if(checkNumber > number){
+//             console.log(number);
+//             message = "Fail";
+//         }
+//     }
+//     return message;
+// }
+// console.log(checkValue(numbers, 10));
+// console.log(checkValue(numbers, 13));
+
+
+// Застосування функції + патерн раннє повернення
+
+// const numbers = [25, 12, 67, 40, 18];
+// function checkValue(arr, target){
+//     for(const item of arr ){
+//         if(target > item){
+//             return "Fail";
+//         }
+//     }
+//     return "Success";
+// }
+
+// console.log(checkValue(numbers, 10));
+// console.log(checkValue(numbers, 13));
+
+
+
+// Task-2
+// Створити функцію яка буде розбивати початковий масив 
+// на потрібну кількість елементів розділюячи на декілька 
+// масивів.Функція приймає 2 параметри
+// 1 - масив значень
+// 2 - потрібну кількість елементіа в масиві
+//  Функція повертає масив масивів
+
+
+// const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// function getCombination(arr, number){
+//     let result = [];
+//     for(let i = 0; i < arr.length; i += number){
+//         result.push(arr.slice(i, i + number));
+//     }
+//     return result;
+// }
+
+// console.log(getCombination(data, 2)); // [[1, 2], [3, 4],[5, 6],[7, 8]]
+// console.log(getCombination(data, 3)); // [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+// Example 3 - Площа прямокутника
+// Напиши функцію getRectArea(dimensions) для обчислення 
+// площі прямокутника зі сторонами, значення яких будуть 
+// передані до параметра dimensions у вигляді рядка. 
+// Значення гарантовано розділені пробілом.
+
+// function getRectArea(str){
+//     let result = str.split(" ");
+//     return result[0] * result [1];
+// };
+
+// console.log(getRectArea('8 11'));
+// console.log(getRectArea('15 11'));
+
+
+// Task-4
+// Напишіть функції для роботи з колекцією навчальних
+// курсів courses:
+
+// addCourse(name) - додає курс до кінця колекції
+// removeCourse(name) - видаляє курс із колекції
+// updateCourse(oldName, newName) - змінює ім'я на нове
+
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+// function addCourse(name){
+//     if(courses.includes(name)){
+//         return "Allready in";
+//     }
+//     courses.push(name);
+//     return courses;
+// }
+
+// console.log(courses); 
+// console.log(addCourse('CSS')); 
+// console.log(addCourse('GO')); 
+
+// function removeCourse(name){
+//     if(courses.indexOf(name) === -1){
+//         return "Not found!"
+//     }
+//     courses.splice(courses.indexOf(name), 1);
+//     return courses
+// }
+
+// console.log(courses); 
+// console.log(removeCourse('Vue'));
+// console.log(removeCourse('HTML'));
+
+// function updateCourse(oldName, newName){
+//      const inx = courses.indexOf(oldName);
+//     if(inx === -1){
+//         return "Not found!"
+//     }
+//     courses[inx] = newName;
+//     return courses;
+// }
+
+// updateCourse('HTML', 'NestJS');
+// console.log(updateCourse('qwerty', 'NestJS'));
+// console.log(courses);
